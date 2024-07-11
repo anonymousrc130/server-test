@@ -1,10 +1,8 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Example route
 app.get('/api/test', (req, res) => {
