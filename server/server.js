@@ -1,18 +1,11 @@
-import express from 'express';
+const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json());
-
-// Example route
-app.get('/api/test', (req, res) => {
-  res.send('Hello from the API!');
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-
-export default app;
